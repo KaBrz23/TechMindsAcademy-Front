@@ -1,11 +1,11 @@
 import Link from "next/link";
 
 interface NavBarProps {
-    active: "Meus Cursos" | "Cursos"
+    active: "Meus Cursos" | "Cursos" | "";
 }
 
 export default function NavBar(props: NavBarProps) {
-    const active = props.active
+    const { active } = props;
     const activeClass = "border-b-4 pb-4 border-neutral-300"
 
     return (
@@ -16,7 +16,7 @@ export default function NavBar(props: NavBarProps) {
                     <Link href="/">Meus Cursos</Link>
                 </li>
                 <li className={active == "Cursos" ? activeClass : ""} >
-                    <Link href="/Cursos">Cursos</Link>
+                    <Link href="/curso">Cursos</Link>
                 </li>
             </ul>
             <div className="w-14 rounded-full overflow-hidden">
